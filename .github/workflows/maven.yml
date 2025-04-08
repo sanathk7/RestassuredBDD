@@ -23,14 +23,8 @@ jobs:
           java-version: '11'
           cache: 'maven'
 
-      - name: Set up Maven
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'maven'
-          maven-version: '3.8.4'
-
-      - name: Install Dependencies
-        run: mvn clean install -U -DskipTests
+      - name: Install Dependencies (Skip Tests)
+        run: mvn clean install -DskipTests
 
       - name: Run API Tests
         run: mvn test -Dtest=runners.TestRunner
