@@ -4,6 +4,8 @@ Feature: Create User API
   So that I can verify the API response
 Background:
 Given the API endpoint is "/users/"
+
+
   Scenario: Create a user successfully
     And I have valid user data from "userData.json"
     When I send a "POST" request
