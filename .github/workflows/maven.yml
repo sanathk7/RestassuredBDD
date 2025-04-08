@@ -3,10 +3,11 @@ name: Run API Tests
 on:
   push:
     branches:
-      - sanath
+      - master
   pull_request:
     branches:
-      - sanath
+      - master
+      
 
 jobs:
   test:
