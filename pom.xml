@@ -15,7 +15,15 @@
 
     <dependencies>
 
-        <!-- Cucumber with TestNG -->
+        <!-- JUnit 4 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber with JUnit -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -23,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
+            <artifactId>cucumber-junit</artifactId>
             <version>6.10.4</version>
             <scope>test</scope>
         </dependency>
@@ -39,18 +47,12 @@
             <artifactId>rest-assured</artifactId>
             <version>4.3.3</version>
         </dependency>
+
+        <!-- JSON and XML support for Rest Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
             <version>4.3.3</version>
-        </dependency>
-
-        <!-- TestNG -->
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.9.0</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Extent Reports -->
@@ -60,7 +62,7 @@
             <version>5.0.9</version>
         </dependency>
 
-        <!-- Jackson -->
+        <!-- Jackson (for JSON serialization/deserialization) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -72,18 +74,11 @@
             <version>2.15.3</version>
         </dependency>
 
-        <!-- Gson (optional) -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compiler -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
@@ -93,17 +88,18 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire -->
+            <!-- Surefire Plugin to run JUnit tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
                     <includes>
-                        <include>**/TestRunner*.java</include>
+                        <include>**/TestRunnerTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
