@@ -13,5 +13,5 @@ import io.cucumber.junit.CucumberOptions;
    plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"}, // Generates reports
     monochrome = true // Makes the console output readable
 )
-public class TestRunnerTest extends AbstractTestNGCucumberTests {
+public class TestRunnerTest {
 }
