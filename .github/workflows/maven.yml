@@ -30,4 +30,4 @@ jobs:
         run: find src/test/java/runners -name '*Test*.java'
 
       - name: Run Cucumber API Tests
-        run: mvn -x test
+        run: mvn -X test
