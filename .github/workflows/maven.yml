@@ -27,7 +27,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: 🔍 Debug - Show Test Classes
-        run: find src/test/java/runners -name '*Test*.java'
+        run: find src/test/java/runners/TestRunnerTest.java -name '*Test*.java'
 
       - name: Run Cucumber API Tests
         run: mvn test
