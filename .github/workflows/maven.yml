@@ -26,8 +26,11 @@ jobs:
       - name: Build with Maven (Skip Tests)
         run: mvn clean install -DskipTests
 
-      - name: 🔍 Debug - Show Test Classes
-        run: find src/test/java/runners -name '*Test*.java'
+      - name: Debug - List Feature Files
+        run: find src/test/resources -name '*.feature'
 
-      - name: Run Cucumber API Tests
-        run: mvn -X test
+      - name: Debug - List Test Runner Files
+        run: find src/test/java -name '*Test.java'
+
+      - name: Run Cucumber Tests
+        run: mvn test
