@@ -42,7 +42,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>7.14.0</version>
+            <version>6.10.0</version>
             <scope>test</scope>
         </dependency>
 
