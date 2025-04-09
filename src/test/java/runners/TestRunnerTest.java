@@ -1,17 +1,16 @@
-package runners;  // Ensure this matches your package structure
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+package runners;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
+import org.junit.platform.suite.api.ConfigurationParameter;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
 
-    features = "src/test/resources/Feature/LocalApi.feature", // Adjust this if your feature files are in a different folder
+import static io.cucumber.junit.platform.engine.Constants.*;
 
-    glue = {"Stepdefination", "utils"}, // This should match the package of your step definitions
-   plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"}, // Generates reports
-    monochrome = true // Makes the console output readable
-)
+@Suite
+@SelectClasspathResource("Feature") // folder under src/test/resources
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "Stepdefination,utils")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-reports.html, json:target/cucumber-reports.json")
+@ConfigurationParameter(key = MONOCHROME_PROPERTY_NAME, value = "true")
 public class TestRunnerTest {
 }
+
